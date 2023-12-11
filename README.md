@@ -1,4 +1,4 @@
-# Laby Api Documentation (v3)
+# Laby Api Documentation
 > [!NOTE]
 > These docs are in no way associated with LabyMedia, some endpoints may be missing or incorrect.
 
