@@ -104,16 +104,6 @@
 }
 ```
 
-## UUID to status
-- ### `GET /api/v3/user/:uuid/status`
-- This returns the profile status of an UUID.
-
-```json
-{
-    "status": "I should do my homework"
-}
-```
-
 ## UUID to badges
 - ### `GET /api/v3/user/:uuid/badges`
 - This returns the profile badges of an UUID.
@@ -127,6 +117,16 @@
         "received_at": "2009-05-09T22:00:00+00:00"
     }
 ]
+```
+
+## UUID to status
+- ### `GET /api/v3/user/:uuid/status`
+- This returns the profile status of an UUID.
+
+```json
+{
+    "status": "I should do my homework"
+}
 ```
 
 ## UUID to accounts 
