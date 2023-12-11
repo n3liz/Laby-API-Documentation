@@ -54,6 +54,20 @@
 }
 ```
 
+## UUID to names
+- ### `GET /api/v3/user/:uuid/names`
+- This returns the profile names of an UUID.
+```json
+[
+    {
+        "username": "Notch",
+        "changed_at": null,
+        "accurate": true,
+        "last_seen_at": "2023-12-11T20:55:56+00:00"
+    }
+]
+```
+
 ## UUID to snippet
 - ### `GET /api/v3/user/:uuid/snippet`
 - This returns the profile snippet of an UUID.
