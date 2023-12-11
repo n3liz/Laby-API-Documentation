@@ -119,16 +119,6 @@
 ]
 ```
 
-## UUID to status
-- ### `GET /api/v3/user/:uuid/status`
-- This returns the profile status of an UUID.
-
-```json
-{
-    "status": "I should do my homework"
-}
-```
-
 ## UUID to accounts 
 - ### `GET /api/v3/user/:uuid/accounts`
 - This returns the profile linked accounts of an UUID.
@@ -172,6 +162,16 @@
         "role_color": null
     }
 ]
+```
+
+## UUID to status
+- ### `GET /api/v3/user/:uuid/status`
+- This returns the profile status of an UUID.
+
+```json
+{
+    "status": "I should do my homework"
+}
 ```
 
 ## UUID to views
