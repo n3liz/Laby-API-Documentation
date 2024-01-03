@@ -2,6 +2,9 @@
 > [!NOTE]
 > These docs are in no way associated with LabyMedia, some endpoints may be missing or incorrect.
 
+> [!WARNING]
+> The laby api is not made as a public api, stability of the api is not guaranteed.
+
 ## Username to UUID 
 - ### `GET /api/v3/user/:username/uniqueId`
 - This returns the UUID of an username.
