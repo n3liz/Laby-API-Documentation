@@ -284,7 +284,7 @@
 
 ## Badges
 - ### `GET /api/badges`
-- This returns all laby badges.
+- This returns all badges.
 
 ```json
 [
