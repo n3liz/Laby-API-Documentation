@@ -546,6 +546,7 @@
 ## Badge UUID to player UUID(s)
 - ### `GET /api/badge/:uuid`
 - This returns the UUID(s) of players with the specified badge.
+- For some unknown reason, the Translator badge doesn't work here.
 
 ```json
 [
