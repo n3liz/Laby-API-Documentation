@@ -143,6 +143,29 @@
 ]
 ```
 
+
+## UUID to socials
+- ### `GET /api/v3/user/:uuid/socials`
+
+```json
+[
+  {
+    "name": "kacinas#6666",
+    "service": "discord",
+    "service_name": "Discord",
+    "url": "https://discord.com/users/755452572680192101"
+  },
+  {
+    "name": "gabija",
+    "service": "spotify",
+    "service_name": "Spotify",
+    "url": "https://open.spotify.com/user/eoe6mmbaqhe0cqzsk5mzteuck"
+  }
+]
+```
+
+
+
 ## UUID to friends
 - ### `GET /api/v3/user/:uuid/friends`
 - This returns the profile friends of an UUID.
