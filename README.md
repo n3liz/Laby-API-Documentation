@@ -72,13 +72,13 @@ GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/profile
 ```
 
 ## Player UUID to names
-**Endpoint:** `GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/names`
+**Endpoint:** `GET /api/v3/user/:uuid/names`
 
 **Description:** This returns the profile names of an UUID.
 
 **Request:**
 ```http
-GET /api/v3/user/:uuid/names
+GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/names
 ```
 
 **Response:**
