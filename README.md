@@ -6,9 +6,16 @@
 > The laby api is not made as a public api, stability of the api is not guaranteed.
 
 ## Player username to UUID 
-- ### `GET /api/v3/user/:username/uniqueId`
-- This returns the UUID of an username.
+**Endpoint:** `GET /api/v3/user/:username/uniqueId`
 
+**Description:** This returns the UUID of an username.
+
+**Request:**
+```http
+GET /api/v3/user/Notch/uniqueId
+```
+
+**Response:**
 ```json
 {
     "uniqueId": "069a79f4-44e9-4726-a5be-fca90e38aaf5",
@@ -17,9 +24,16 @@
 ```
 
 ## Player UUID to profile 
-- ### `GET /api/v3/user/:uuid/profile`
-- This returns the name, skin and cape history of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/profile`
 
+**Description:** This returns the name, skin and cape history of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/profile
+```
+
+**Response:**
 ```json
 {
     "uuid": "069a79f4-44e9-4726-a5be-fca90e38aaf5",
@@ -58,8 +72,16 @@
 ```
 
 ## Player UUID to names
-- ### `GET /api/v3/user/:uuid/names`
-- This returns the profile names of an UUID.
+**Endpoint:** `GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/names`
+
+**Description:** This returns the profile names of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/:uuid/names
+```
+
+**Response:**
 ```json
 [
     {
@@ -72,9 +94,16 @@
 ```
 
 ## Player UUID to snippet
-- ### `GET /api/v3/user/:uuid/snippet`
-- This returns the profile snippet of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/snippet`
 
+**Description:** This returns the profile snippet of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/snippet
+```
+
+**Response:**
 ```json
 {
     "user": {
@@ -108,9 +137,16 @@
 ```
 
 ## Player UUID to badges
-- ### `GET /api/v3/user/:uuid/badges`
-- This returns the profile badges of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/badges`
 
+**Description:** This returns the profile badges of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/069a79f4-44e9-4726-a5be-fca90e38aaf5/badges
+```
+
+**Response:**
 ```json
 [
     {
@@ -123,9 +159,16 @@
 ```
 
 ## Player UUID to accounts 
-- ### `GET /api/v3/user/:uuid/accounts`
-- This returns the profile linked accounts of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/accounts`
 
+**Description:** This returns the profile linked accounts of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/accounts
+```
+
+**Response:**
 ```json
 [
     {
@@ -145,9 +188,16 @@
 
 
 ## Player UUID to socials
-- ### `GET /api/v3/user/:uuid/socials`
-- This returns the profile socials of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/socials`
 
+**Description:** This returns the profile socials of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/22500b81-e889-4367-b83c-24c52914e2de/socials
+```
+
+**Response:**
 ```json
 [
   {
@@ -168,8 +218,14 @@
 
 
 ## Player UUID to friends
-- ### `GET /api/v3/user/:uuid/friends`
-- This returns the profile friends of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/friends`
+
+**Description:** This returns the profile friends of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/friends
+```
 
 ```json
 [
@@ -192,9 +248,16 @@
 ```
 
 ## Player UUID to status
-- ### `GET /api/v3/user/:uuid/status`
-- This returns the profile status of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/status`
 
+**Description:** This returns the profile status of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/status
+```
+
+**Response:**
 ```json
 {
     "status": "I should do my homework"
@@ -202,9 +265,16 @@
 ```
 
 ## Player UUID to views
-- ### `GET /api/v3/user/:uuid/views`
-- This returns the profile views of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/views`
 
+**Description:** This returns the monthly profile views of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/views
+```
+
+**Response:**
 ```json
 {
     "views": 48
@@ -212,9 +282,16 @@
 ```
 
 ## Player UUID to hearts
-- ### `GET /api/v3/user/:uuid/heart`
-- This returns the profile hearts of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/heart`
 
+**Description:** This returns the profile hearts of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/heart
+```
+
+**Response:**
 ```json
 {
     "count": 0,
@@ -223,8 +300,16 @@
 ```
 
 ## Player UUID to emotes
-- ### `GET /api/v3/user/:uuid/emotes`
-- This returns the labymod emotes of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/emotes`
+
+**Description:** This returns the labymod emotes of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/emotes
+```
+
+**Response:**
 ```json
 [
     {
@@ -261,9 +346,16 @@
 ```
 
 ## Player UUID to online status
-- ### `GET /api/v3/user/:uuid/online-status`
-- This returns the labymod status of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/online-status`
 
+**Description:** This returns the labymod status of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/emotes
+```
+
+**Response:**
 ```json
 {
     "online":false,
@@ -272,9 +364,16 @@
 ```
 
 ## Player UUID to game stats
-- ### `GET /api/v3/user/:uuid/game-stats`
-- This returns the labymod statistics of an UUID.
+**Endpoint:** `GET /api/v3/user/:uuid/game-stats`
 
+**Description:** This returns the labymod statistics of an UUID.
+
+**Request:**
+```http
+GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/game-stats
+```
+
+**Response:**
 ```json
 {
     "first_joined": "2023-02-02T19:42:33+00:00",
@@ -283,9 +382,16 @@
 ```
 
 ## Badges
-- ### `GET /api/badges`
-- This returns all badges.
+**Endpoint:** `GET /api/badges`
 
+**Description:** This returns all badges.
+
+**Request:**
+```http
+GET /api/badges
+```
+
+**Response:**
 ```json
 [
     {
@@ -544,10 +650,16 @@
 ```
 
 ## Badge UUID to player UUID(s)
-- ### `GET /api/badge/:uuid`
-- This returns the UUID(s) of players with the specified badge.
-- For some unknown reason, the Translator badge doesn't work here.
+**Endpoint:** `GET /api/badge/:uuid`
 
+**Description:** This returns the UUID(s) of players with the specified badge.
+
+**Request:**
+```http
+GET /api/badge/b9d1d993-8841-4346-8008-5a6ddc8bd688
+```
+
+**Response:**
 ```json
 [
     "53f7e4c8-9469-4829-997d-f9a522e04b95",
@@ -555,3 +667,5 @@
     "30135bad-a576-4477-8dd6-61c9f5dd5839"
 ]
 ```
+
+**Note** For some unknown reason, the Translator badge doesn't work here.
