@@ -668,4 +668,4 @@ GET /api/badge/b9d1d993-8841-4346-8008-5a6ddc8bd688
 ]
 ```
 
-**Note** For some unknown reason, the Translator badge doesn't work here.
+**Note:** For some unknown reason, the Translator badge doesn't work here.
