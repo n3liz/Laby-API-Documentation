@@ -3,7 +3,7 @@
 > These docs are in no way associated with LabyMedia, some endpoints may be missing or incorrect.
 
 > [!WARNING]
-> The laby api is not made as a public api, stability of the api is not guaranteed.
+> The Laby API is not made as a public API, stability of the API is not guaranteed.
 
 ## Player username to UUID 
 **Endpoint:** `GET /api/v3/user/:username/uniqueId`
@@ -382,13 +382,13 @@ GET /api/v3/user/1dc85f66-6776-4f64-b3b5-c6f3f72155d8/game-stats
 ```
 
 ## Badges
-**Endpoint:** `GET /api/badges`
+**Endpoint:** `GET /api/v3/badges`
 
 **Description:** This returns all badges.
 
 **Request:**
 ```http
-GET /api/badges
+GET /api/v3/badges
 ```
 
 **Response:**
@@ -649,6 +649,26 @@ GET /api/badges
 ]
 ```
 
+## Badge UUID to info
+**Endpoint:** `GET /api/v3/badge/:uuid`
+
+**Description:** This returns the info of a badge.
+
+**Request:**
+```http
+GET /api/v3/badge/b9d1d993-8841-4346-8008-5a6ddc8bd688
+```
+
+**Response:**
+```json
+{
+  "id": 32,
+  "uuid": "b9d1d993-8841-4346-8008-5a6ddc8bd688",
+  "name": "All Minecon capes",
+  "description": "The account owns all existing Minecon capes"
+}
+```
+
 ## Badge UUID to player UUID(s)
 **Endpoint:** `GET /api/badge/:uuid`
 
@@ -669,3 +689,28 @@ GET /api/badge/b9d1d993-8841-4346-8008-5a6ddc8bd688
 ```
 
 **Note:** For some unknown reason, the Translator badge doesn't work here.
+
+## Statistics
+**Endpoint:** `GET /api/v3/statistics`
+
+**Description:** This returns database statistics.
+
+**Request:**
+```http
+GET /api/statistics
+```
+
+**Response:**
+```json
+{
+  "minecraft": {
+    "amount": 62724811,
+    "velocity": 0.24818442749268
+  },
+  "labynet": {
+    "amount": 57786385,
+    "velocity": 0.0201997757824888,
+    "contributions": []
+  }
+}
+```
