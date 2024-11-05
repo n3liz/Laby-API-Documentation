@@ -654,7 +654,7 @@ GET /api/v3/statistics
 }
 ```
 
-## capes
+## Capes
 **Endpoint:** `GET /api/v3/capes`
 
 **Description:** This returns information on all Mojang capes.
@@ -719,7 +719,7 @@ GET /api/v3/capes
 ]
 ```
 
-## names
+## Names
 **Endpoint:** `GET /api/v3/names?order_by=:order_by:&order=:order:&page=:page:&popularity=:popularity:&min_length=:min_length:&max_length=:max_length:&is_og=:is_og:`
 
 **Description:** This retrieves a list of available names.
