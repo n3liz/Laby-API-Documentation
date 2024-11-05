@@ -396,6 +396,40 @@ GET /api/badge/b9d1d993-8841-4346-8008-5a6ddc8bd688
 ]
 ```
 
+## Search Player
+**Endpoint:** `GET /api/search/names/:name:`
+
+**Description:** This returns a list of usernames and UUIDs for players matching the specified query
+
+**Request:**
+```http
+GET /api/search/names/Tvrki
+```
+
+**Response:**
+```json
+{
+  "results": [
+    {
+      "user_name": "Tvrki",
+      "name": "Tvrki",
+      "uuid": "ef6fafc3-15bd-450c-bbcb-78b263df2e8a"
+    },
+    {
+      "user_name": "TVRkid",
+      "name": "TVRkid",
+      "uuid": "7ec51386-7d57-4dd8-9adb-31d612fe3b49"
+    },
+    {
+      "user_name": "Tvrkii",
+      "name": "Tvrkii",
+      "uuid": "dd4f69e8-83a8-431e-a18b-7ff0ac887d22"
+    },
+    '''
+  ]
+}
+```
+
 ## Featured servers
 **Endpoint:** `GET /api/v3/featured/servers`
 
