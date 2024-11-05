@@ -476,3 +476,111 @@ GET /api/v3/statistics
     }
 }
 ```
+
+## capes
+**Endpoint:** `GET /api/v3/capes`
+
+**Description:** This returns information on all Mojang capes.
+
+**Request:**
+```http
+GET /api/v3/capes
+```
+
+**Response:**
+```json
+[
+  {
+    "name": "MineCon 2016",
+    "description": {
+      "en": "This cape was given to all players who attended MINECON 2016. A redemption link was emailed to all MINECON 2016 attendees who scanned their ticket at the entrance on September 24, 2016."
+    },
+    "image_hash": "de4a8ad0267f4fc0f41a732ebcf10ec9",
+    "use_count": 6487
+  },
+  {
+    "name": "Prismarine",
+    "description": {
+      "en": "This cape was given to @5399b615-3440-4c66-939d-ab1375952ac3 for recreating the prismarine block for use in his Chisel mod rather than modifying Mojang's texture. Jeb had this cape made before reaching out to Drullkus but it had no owner. Before this cape was given to Drullkus, @7125ba8b-1c86-4508-b92b-b5c042ccfe2b had it on his account but it was later removed."
+    },
+    "image_hash": "b32d8c1671c2936e81ec7e711e2af8e4",
+    "use_count": 1
+  },
+  {
+    "name": "MineCon 2011",
+    "description": {
+      "en": "This cape was automatically added to all MINECON 2011 attendees' registered username."
+    },
+    "image_hash": "00f15c80c9ab3540477210d4e58af337",
+    "use_count": 2959
+  },
+  {
+    "name": "MineCon 2015",
+    "description": {
+      "en": "Unlike previous events, this cape was available on the Console Edition from July 1 to 15. A redemption link for this cape was emailed to all MINECON 2015 attendees who scanned their ticket at the entrance on July 4, 2015."
+    },
+    "image_hash": "4d1709d6e62c99ec7220e0787df0362e",
+    "use_count": 5617
+  },
+  {
+    "name": "MineCon 2013",
+    "description": {
+      "en": "On October 30, 2013 Tobias Mollstam of the Mojang Team tweeted out an image of the 2013 MINECON cape. The cape shows an extended piston on a green shaded background. A redemption link for this cape was emailed to all registered MINECON 2013 attendees, similar to MINECON 2012's method."
+    },
+    "image_hash": "37cd76a8a0879233398d127099326cb7",
+    "use_count": 5905
+  },
+  {
+    "name": "MineCon 2012",
+    "description": {
+      "en": "A redemption link for this cape was emailed to all registered MINECON 2012 attendees."
+    },
+    "image_hash": "2b7ccdbfd1d89520f335822140d83d52",
+    "use_count": 3452
+  },
+'''
+]
+```
+
+## names
+**Endpoint:** `GET /api/v3/names?order_by=:order_by:&order=:order:&page=:page:&popularity=:popularity:&min_length=:min_length:&max_length=:max_length:&is_og=:is_og:`
+
+**Description:** This retrieves a list of available names.
+
+** Query Parameters **
+
+| Parameter      | Type   | Description                                                               | Example          |
+|----------------|--------|---------------------------------------------------------------------------|------------------|
+| `order_by`     | String | Sort results by **available_from** or **popularity**                     | `available_from` |
+| `order`        | String | Specify **ASC** or **DESC** order for sorting                           | `ASC`            |
+| `page`         | Int    | Specify the page number for pagination                                    | `1`              |
+| `popularity`   | Int    | Filter names by popularity (0-100); `0` retrieves all names             | `0`              |
+| `min_length`   | Int    | Minimum length of names to retrieve                                       | `3`              |
+| `max_length`   | Int    | Maximum length of names to retrieve                                       | `16`             |
+| `is_og`        | String | Filter by OG status; use `none` to exclude OG names 
+
+**Request:**
+```http
+GET /api/v3/names
+``` 
+
+**Response:**
+```json
+[
+  {
+    "name": "JJoTT6612",
+    "available_from": "2024-11-05T06:38:10Z",
+    "og": false,
+    "popularity": 3,
+    "accurate": false
+  },
+  {
+    "name": "Bakterix",
+    "available_from": "2024-11-05T06:38:44Z",
+    "og": false,
+    "popularity": 5,
+    "accurate": false
+  },
+'''
+]
+```
