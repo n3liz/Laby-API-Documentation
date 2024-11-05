@@ -557,11 +557,11 @@ GET /api/v3/capes
 | `popularity`   | Int    | Filter names by popularity (0-100); `0` retrieves all names             | `0`              |
 | `min_length`   | Int    | Minimum length of names to retrieve                                       | `3`              |
 | `max_length`   | Int    | Maximum length of names to retrieve                                       | `16`             |
-| `is_og`        | String | Filter by OG status; use `none` to exclude OG names 
+| `is_og`        | String | Filter by OG status; use `none` to exclude OG or `show` to include all names| `none` or `show` |
 
 **Request:**
 ```http
-GET /api/v3/names
+GET [/api/v3/names?order_by=available_from&order=ASC&page=1&popularity=0&min_length=3&max_length=16&is_og=none](https://laby.net/api/v3/names?order_by=available_from&order=ASC&page=1&popularity=0&min_length=3&max_length=16&is_og=none)
 ``` 
 
 **Response:**
