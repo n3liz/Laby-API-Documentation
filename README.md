@@ -428,7 +428,150 @@ GET /api/search/names/Tvrki
     '''
   ]
 }
+
+
 ```
+## Skins 
+**Endpoint:** `GET /api/v3/search/textures/skin?page=:page:&order=:order:&size=:size:&offset=:offset:`
+
+**Description:** allows users to retrieve a list of skins
+
+| Parameter      | Type   | Description                                                               | Example          |
+|----------------|--------|---------------------------------------------------------------------------|------------------|
+| `order`        | String | Specifies the order of the results. Options include:                    | `trending_24h`   |
+|                |        | - `trending_30d`: Shows skins that are trending over the last 30 days.  |                  |
+|                |        | - `trending_7d`: Shows skins that are trending over the last 7 days.    |                  |
+|                |        | - `trending_24h`: Shows skins that are trending over the last 24 hours. |                  |
+|                |        | - `most_used`: Shows the most used skins overall.                        |                  |
+|                |        | - `latest`: Shows the most recently uploaded skins.                      |                  |
+| `size`         | Int    | Specifies the size of the returned skin images in pixels.                | `40`             |
+| `offset`       | Int    | Specifies the number of skins to skip before starting to collect results. | `0`              |
+| `page`         | Int    | Specifies the page number of results to retrieve for pagination.          | `1`              |
+
+**Request:**
+```http
+GET /api/v3/search/textures/skin?size=40&offset=0&order=trending_24h
+```
+
+**Response:**
+```json
+{
+  "results": [
+    {
+      "image_hash": "b0f1d45ebdcb0ba4f97178da70477ce8",
+      "use_count": 8131,
+      "tags": "Brown Hair Shorts Derp Simple Weird",
+      "slim": true
+    },
+    {
+      "image_hash": "bdaa28d62f5e439258f16cdc1a1c81cc",
+      "use_count": 1768,
+      "tags": null,
+      "slim": false
+    },
+    {
+      "image_hash": "9552852e575e7acb9633fd0385a50ba8",
+      "use_count": 11368,
+      "tags": "Genshin Genshin Impact Hu Tao Female Woman",
+      "slim": true
+    },
+    {
+      "image_hash": "97fc60b009e40ae4b7722d47ba6f6883",
+      "use_count": 95,
+      "tags": null,
+      "slim": false
+    },
+    {
+      "image_hash": "dbfd7bd6f9f9bd19ed28789db9bb16d3",
+      "use_count": 17663,
+      "tags": "Girl Cute Animal Bear White",
+      "slim": true
+    },
+'''
+  ]
+}
+```
+
+## Skins Tag
+**Endpoint:** `GET /api/v3/tags?offset=:offset:&size=:size:`
+
+**Description:** This API returns skins data based on its tags..
+
+| Parameter | Type   | Description                                       | Default Value |
+|-----------|--------|---------------------------------------------------|---------------|
+| `offset`  | Integer| The starting point for the returned data set. Used for pagination. | `0`           |
+| `size`    | Integer| The number of tags to return in the response.    | `40`          |
+
+**Request:**
+```http
+GET /api/v3/tags?offset=0&size=40
+```
+
+**Response:**
+```json
+[
+  {
+    "id": 3265,
+    "name": "Girl",
+    "use_count": 188109,
+    "preview": [
+      {
+        "image_hash": "e0788c2cce724b226dc85cd465caf976",
+        "slim": true
+      },
+      {
+        "image_hash": "db1a475778364635a79767b35dde4348",
+        "slim": true
+      },
+      {
+        "image_hash": "5f61ed90d008c549e0de679fba39c682",
+        "slim": true
+      }
+    ]
+  },
+  {
+    "id": 2693,
+    "name": "Cute",
+    "use_count": 110806,
+    "preview": [
+      {
+        "image_hash": "05667dd6808e0b5a7486a137c83ec802",
+        "slim": false
+      },
+      {
+        "image_hash": "1a141e0894e77cb0bb73f35273a92bc2",
+        "slim": true
+      },
+      {
+        "image_hash": "9eef4296fc9aa307bd1456011b8081ef",
+        "slim": true
+      }
+    ]
+  },
+  {
+    "id": 448,
+    "name": "Boy",
+    "use_count": 78506,
+    "preview": [
+      {
+        "image_hash": "f7ecd5e204a72e622d3f1805c3d810f9",
+        "slim": false
+      },
+      {
+        "image_hash": "bbb12131b90bc20eb8e579cb727433b2",
+        "slim": true
+      },
+      {
+        "image_hash": "8ed4eaf490feab5004d7540905f14a74",
+        "slim": true
+      }
+    ]
+  },
+  '''
+  }
+]
+```
+
 
 ## Featured servers
 **Endpoint:** `GET /api/v3/featured/servers`
