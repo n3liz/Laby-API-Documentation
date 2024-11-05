@@ -561,7 +561,7 @@ GET /api/v3/capes
 
 **Request:**
 ```http
-GET [/api/v3/names?order_by=available_from&order=ASC&page=1&popularity=0&min_length=3&max_length=16&is_og=none](https://laby.net/api/v3/names?order_by=available_from&order=ASC&page=1&popularity=0&min_length=3&max_length=16&is_og=none)
+GET /api/v3/names?order_by=available_from&order=ASC&page=1&popularity=0&min_length=3&max_length=16&is_og=none
 ``` 
 
 **Response:**
