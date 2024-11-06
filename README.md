@@ -396,6 +396,183 @@ GET /api/badge/b9d1d993-8841-4346-8008-5a6ddc8bd688
 ]
 ```
 
+## Search Player
+**Endpoint:** `GET /api/search/names/:name:`
+
+**Description:** This returns a list of usernames and UUIDs for players matching the specified query
+
+**Request:**
+```http
+GET /api/search/names/Tvrki
+```
+
+**Response:**
+```json
+{
+  "results": [
+    {
+      "user_name": "Tvrki",
+      "name": "Tvrki",
+      "uuid": "ef6fafc3-15bd-450c-bbcb-78b263df2e8a"
+    },
+    {
+      "user_name": "TVRkid",
+      "name": "TVRkid",
+      "uuid": "7ec51386-7d57-4dd8-9adb-31d612fe3b49"
+    },
+    {
+      "user_name": "Tvrkii",
+      "name": "Tvrkii",
+      "uuid": "dd4f69e8-83a8-431e-a18b-7ff0ac887d22"
+    },
+    '''
+  ]
+}
+
+
+```
+## Skins 
+**Endpoint:** `GET /api/v3/search/textures/skin?page=:page:&order=:order:&size=:size:&offset=:offset:`
+
+**Description:** allows users to retrieve a list of skins
+
+| Parameter      | Type   | Description                                                               | Example          |
+|----------------|--------|---------------------------------------------------------------------------|------------------|
+| `order`        | String | Specifies the order of the results. Options include:                    | `trending_24h`   |
+|                |        | - `trending_30d`: Shows skins that are trending over the last 30 days.  |                  |
+|                |        | - `trending_7d`: Shows skins that are trending over the last 7 days.    |                  |
+|                |        | - `trending_24h`: Shows skins that are trending over the last 24 hours. |                  |
+|                |        | - `most_used`: Shows the most used skins overall.                        |                  |
+|                |        | - `latest`: Shows the most recently uploaded skins.                      |                  |
+| `size`         | Int    | Specifies the size of the returned skin images in pixels.                | `40`             |
+| `offset`       | Int    | Specifies the number of skins to skip before starting to collect results. | `0`              |
+| `page`         | Int    | Specifies the page number of results to retrieve for pagination.          | `1`              |
+
+**Request:**
+```http
+GET /api/v3/search/textures/skin?size=40&offset=0&order=trending_24h
+```
+
+**Response:**
+```json
+{
+  "results": [
+    {
+      "image_hash": "b0f1d45ebdcb0ba4f97178da70477ce8",
+      "use_count": 8131,
+      "tags": "Brown Hair Shorts Derp Simple Weird",
+      "slim": true
+    },
+    {
+      "image_hash": "bdaa28d62f5e439258f16cdc1a1c81cc",
+      "use_count": 1768,
+      "tags": null,
+      "slim": false
+    },
+    {
+      "image_hash": "9552852e575e7acb9633fd0385a50ba8",
+      "use_count": 11368,
+      "tags": "Genshin Genshin Impact Hu Tao Female Woman",
+      "slim": true
+    },
+    {
+      "image_hash": "97fc60b009e40ae4b7722d47ba6f6883",
+      "use_count": 95,
+      "tags": null,
+      "slim": false
+    },
+    {
+      "image_hash": "dbfd7bd6f9f9bd19ed28789db9bb16d3",
+      "use_count": 17663,
+      "tags": "Girl Cute Animal Bear White",
+      "slim": true
+    },
+'''
+  ]
+}
+```
+
+## Skins Tag
+**Endpoint:** `GET /api/v3/tags?offset=:offset:&size=:size:`
+
+**Description:** This API returns skins data based on its tags..
+
+| Parameter | Type   | Description                                       | Default Value |
+|-----------|--------|---------------------------------------------------|---------------|
+| `offset`  | Integer| The starting point for the returned data set. Used for pagination. | `0`           |
+| `size`    | Integer| The number of tags to return in the response.    | `40`          |
+
+**Request:**
+```http
+GET /api/v3/tags?offset=0&size=40
+```
+
+**Response:**
+```json
+[
+  {
+    "id": 3265,
+    "name": "Girl",
+    "use_count": 188109,
+    "preview": [
+      {
+        "image_hash": "e0788c2cce724b226dc85cd465caf976",
+        "slim": true
+      },
+      {
+        "image_hash": "db1a475778364635a79767b35dde4348",
+        "slim": true
+      },
+      {
+        "image_hash": "5f61ed90d008c549e0de679fba39c682",
+        "slim": true
+      }
+    ]
+  },
+  {
+    "id": 2693,
+    "name": "Cute",
+    "use_count": 110806,
+    "preview": [
+      {
+        "image_hash": "05667dd6808e0b5a7486a137c83ec802",
+        "slim": false
+      },
+      {
+        "image_hash": "1a141e0894e77cb0bb73f35273a92bc2",
+        "slim": true
+      },
+      {
+        "image_hash": "9eef4296fc9aa307bd1456011b8081ef",
+        "slim": true
+      }
+    ]
+  },
+  {
+    "id": 448,
+    "name": "Boy",
+    "use_count": 78506,
+    "preview": [
+      {
+        "image_hash": "f7ecd5e204a72e622d3f1805c3d810f9",
+        "slim": false
+      },
+      {
+        "image_hash": "bbb12131b90bc20eb8e579cb727433b2",
+        "slim": true
+      },
+      {
+        "image_hash": "8ed4eaf490feab5004d7540905f14a74",
+        "slim": true
+      }
+    ]
+  },
+  '''
+  }
+]
+```
+
+
 ## Featured servers
 **Endpoint:** `GET /api/v3/featured/servers`
 
@@ -475,4 +652,112 @@ GET /api/v3/statistics
         "contributions": []
     }
 }
+```
+
+## Capes
+**Endpoint:** `GET /api/v3/capes`
+
+**Description:** This returns information on all Mojang capes.
+
+**Request:**
+```http
+GET /api/v3/capes
+```
+
+**Response:**
+```json
+[
+  {
+    "name": "MineCon 2016",
+    "description": {
+      "en": "This cape was given to all players who attended MINECON 2016. A redemption link was emailed to all MINECON 2016 attendees who scanned their ticket at the entrance on September 24, 2016."
+    },
+    "image_hash": "de4a8ad0267f4fc0f41a732ebcf10ec9",
+    "use_count": 6487
+  },
+  {
+    "name": "Prismarine",
+    "description": {
+      "en": "This cape was given to @5399b615-3440-4c66-939d-ab1375952ac3 for recreating the prismarine block for use in his Chisel mod rather than modifying Mojang's texture. Jeb had this cape made before reaching out to Drullkus but it had no owner. Before this cape was given to Drullkus, @7125ba8b-1c86-4508-b92b-b5c042ccfe2b had it on his account but it was later removed."
+    },
+    "image_hash": "b32d8c1671c2936e81ec7e711e2af8e4",
+    "use_count": 1
+  },
+  {
+    "name": "MineCon 2011",
+    "description": {
+      "en": "This cape was automatically added to all MINECON 2011 attendees' registered username."
+    },
+    "image_hash": "00f15c80c9ab3540477210d4e58af337",
+    "use_count": 2959
+  },
+  {
+    "name": "MineCon 2015",
+    "description": {
+      "en": "Unlike previous events, this cape was available on the Console Edition from July 1 to 15. A redemption link for this cape was emailed to all MINECON 2015 attendees who scanned their ticket at the entrance on July 4, 2015."
+    },
+    "image_hash": "4d1709d6e62c99ec7220e0787df0362e",
+    "use_count": 5617
+  },
+  {
+    "name": "MineCon 2013",
+    "description": {
+      "en": "On October 30, 2013 Tobias Mollstam of the Mojang Team tweeted out an image of the 2013 MINECON cape. The cape shows an extended piston on a green shaded background. A redemption link for this cape was emailed to all registered MINECON 2013 attendees, similar to MINECON 2012's method."
+    },
+    "image_hash": "37cd76a8a0879233398d127099326cb7",
+    "use_count": 5905
+  },
+  {
+    "name": "MineCon 2012",
+    "description": {
+      "en": "A redemption link for this cape was emailed to all registered MINECON 2012 attendees."
+    },
+    "image_hash": "2b7ccdbfd1d89520f335822140d83d52",
+    "use_count": 3452
+  },
+'''
+]
+```
+
+## Names
+**Endpoint:** `GET /api/v3/names?order_by=:order_by:&order=:order:&page=:page:&popularity=:popularity:&min_length=:min_length:&max_length=:max_length:&is_og=:is_og:`
+
+**Description:** This retrieves a list of available names.
+
+** Query Parameters **
+
+| Parameter      | Type   | Description                                                               | Example          |
+|----------------|--------|---------------------------------------------------------------------------|------------------|
+| `order_by`     | String | Sort results by **available_from** or **popularity**                     | `available_from` |
+| `order`        | String | Specify **ASC** or **DESC** order for sorting                           | `ASC`            |
+| `page`         | Int    | Specify the page number for pagination                                    | `1`              |
+| `popularity`   | Int    | Filter names by popularity (0-100); `0` retrieves all names             | `0`              |
+| `min_length`   | Int    | Minimum length of names to retrieve                                       | `3`              |
+| `max_length`   | Int    | Maximum length of names to retrieve                                       | `16`             |
+| `is_og`        | String | Filter by OG status; use `none` to exclude OG or `show` to include all names| `none` or `show` |
+
+**Request:**
+```http
+GET /api/v3/names?order_by=available_from&order=ASC&page=1&popularity=0&min_length=3&max_length=16&is_og=none
+``` 
+
+**Response:**
+```json
+[
+  {
+    "name": "JJoTT6612",
+    "available_from": "2024-11-05T06:38:10Z",
+    "og": false,
+    "popularity": 3,
+    "accurate": false
+  },
+  {
+    "name": "Bakterix",
+    "available_from": "2024-11-05T06:38:44Z",
+    "og": false,
+    "popularity": 5,
+    "accurate": false
+  },
+'''
+]
 ```
